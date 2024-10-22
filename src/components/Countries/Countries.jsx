@@ -23,7 +23,7 @@ const Countries = () => {
     }
     return (
         <div>
-                <h1>All countries:{countries.length}</h1>
+                <h1>All countries Name:{countries.length}</h1>
                 <div>
                     <h2>Visited Countries</h2>
                     <ul>
