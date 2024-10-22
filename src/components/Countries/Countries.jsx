@@ -12,10 +12,14 @@ const Countries = () => {
     },[])
     const [countryVisited,setCountryVisited]=useState([]);
     const handleVisitedCountry = country =>{
-        console.log(country);
-        console.log('add this visited country');
         const newVisitedCountry = [...countryVisited,country]
         setCountryVisited(newVisitedCountry)
+    }
+    const [countryFlags,setCountryFlags] = useState([])
+    const handleFlags = (flags) =>{
+        console.log(flags);
+        const newFlags = [...countryFlags,flags]
+        setCountryFlags(newFlags)
     }
     return (
         <div>
@@ -28,9 +32,14 @@ const Countries = () => {
                             }
                     </ul>
                 </div>
+                <div className="country-Flags">
+                    {
+                        countryFlags.map(flag => <img src={flag}></img>)
+                    }
+                </div>
         <div className="country-Container">
             {
-                countries.map(country => <Country key={country.cca3} country={country} handleVisitedCountry={handleVisitedCountry}></Country>)
+                countries.map(country => <Country key={country.cca3} country={country} handleVisitedCountry={handleVisitedCountry} handleFlags={handleFlags}></Country>)
             }
         </div>
         </div>
